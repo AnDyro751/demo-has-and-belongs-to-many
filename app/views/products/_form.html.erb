@@ -22,10 +22,20 @@
   <div class="field">
     <%= form.input :fulfillment_center_ids,
                    collection: FulfillmentCenter.all,
-                   input_html: {class: "js-multiple", multiple: true}
+                   input_html: {class: "js-multiple", multiple: true},
+                   label: "Selecciona el fulfillment"
 
     %>
-    <%#= form.input :price %>
+  </div>
+
+
+  <div class="field">
+    <%= form.input :distribution_center_ids,
+                   collection: DistributionCenter.all,
+                   input_html: {class: "js-multiple", multiple: true},
+                   label: "Selecciona el centro de distribución"
+
+    %>
   </div>
 
 

@@ -62,13 +62,14 @@ class FulfillmentCentersController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_fulfillment_center
-      @fulfillment_center = FulfillmentCenter.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def fulfillment_center_params
-      params.require(:fulfillment_center).permit(:name, :description)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_fulfillment_center
+    @fulfillment_center = FulfillmentCenter.find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def fulfillment_center_params
+    params.require(:fulfillment_center).permit(:name, :description, product_ids: [])
+  end
 end

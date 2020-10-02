@@ -9,6 +9,11 @@
   <strong>Price:</strong>
   <%= @product.price %>
 </p>
+<h2>Fulfillment centers</h2>
+<% @product.fulfillment_centers.each do |ff| %>
+  <p>Nombre: <strong><%= ff.name %></strong></p>
+  <p>Descripción: <strong><%= ff.description %></strong></p>
+<% end %>
 
 <%= link_to 'Edit', edit_product_path(@product) %> |
 <%= link_to 'Back', products_path %>

@@ -10,5 +10,10 @@
   <%= @fulfillment_center.description %>
 </p>
 
+<h2>Productos:</h2>
+<% @fulfillment_center.products.each do |product| %>
+  <p>Nombre: <%= product.name %></p>
+  <p>Precio: <%= number_to_currency(product.price) %></p>
+<% end %>
 <%= link_to 'Edit', edit_fulfillment_center_path(@fulfillment_center) %> |
 <%= link_to 'Back', fulfillment_centers_path %>

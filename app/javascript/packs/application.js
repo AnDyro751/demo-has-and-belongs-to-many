@@ -18,21 +18,23 @@ import Choices from "choices.js";
 
 
 document.addEventListener("turbolinks:load", () => {
-    const element = document.querySelector('.js-multiple');
-    if (element) {
-        const choices = new Choices(element, {
-            placeholder: true,
-            removeItemButton: true,
-            noResultsText: "Sin resultados",
-            loadingText: "Cargando...",
-            noChoicesText: "No hay elementos disponibles",
-            itemSelectText: "Click para seleccionar",
-            placeholderValue: "Categorías",
-            searchPlaceholderValue: "Categorías",
-            classNames: {
-                containerInner: 'px-3 py-3 rounded cursor-pointer mt-4 bg-main-gray',
-                input: "main-input"
-            }
-        });
+    const elements = document.querySelectorAll('.js-multiple');
+    if (elements.length > 0) {
+        elements.forEach((el) => {
+            new Choices(el, {
+                placeholder: true,
+                removeItemButton: true,
+                noResultsText: "Sin resultados",
+                loadingText: "Cargando...",
+                noChoicesText: "No hay elementos disponibles",
+                itemSelectText: "Click para seleccionar",
+                placeholderValue: "Categorías",
+                searchPlaceholderValue: "Categorías",
+                classNames: {
+                    containerInner: 'px-3 py-3 rounded cursor-pointer mt-4 bg-main-gray',
+                    input: "main-input"
+                }
+            });
+        })
     }
 })
