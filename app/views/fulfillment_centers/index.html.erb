@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Fulfillment Centers</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @fulfillment_centers.each do |fulfillment_center| %>
+      <tr>
+        <td><%= fulfillment_center.name %></td>
+        <td><%= fulfillment_center.description %></td>
+        <td><%= link_to 'Show', fulfillment_center %></td>
+        <td><%= link_to 'Edit', edit_fulfillment_center_path(fulfillment_center) %></td>
+        <td><%= link_to 'Destroy', fulfillment_center, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Fulfillment Center', new_fulfillment_center_path %>

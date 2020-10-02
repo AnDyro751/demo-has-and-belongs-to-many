@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @fulfillment_center.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @fulfillment_center.description %>
+</p>
+
+<%= link_to 'Edit', edit_fulfillment_center_path(@fulfillment_center) %> |
+<%= link_to 'Back', fulfillment_centers_path %>

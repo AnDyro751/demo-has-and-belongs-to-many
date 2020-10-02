@@ -1,0 +1,2 @@
+class FulfillmentCenter < ApplicationRecord
+end
